@@ -20,10 +20,10 @@ ENV NB_UID=1011
 RUN yum install -y curl wget java-headless bzip2 gnupg2 sqlite3 \
     && yum clean all -y \
     && cd /tmp \
-    && wget -q https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh \
-    && echo d0c7c71cc5659e54ab51f2005a8d96f3 Miniconda3-4.2.12-Linux-x86_64.sh | md5sum -c - \
-    && bash Miniconda3-4.2.12-Linux-x86_64.sh -b -p $CONDA_DIR \
-    && rm Miniconda3-4.2.12-Linux-x86_64.sh \
+    && wget -q https://repo.anaconda.com/miniconda/Miniconda2-4.5.12-Linux-x86_64.sh \
+    && echo 4be03f925e992a8eda03758b72a77298  Miniconda2-4.5.12-Linux-x86_64.sh| md5sum -c - \
+    && bash Miniconda2-4.5.12-Linux-x86_64.sh -b -p $CONDA_DIR \
+    && rm Miniconda2-4.5.12-Linux-x86_64.sh \
     && export PATH=/opt/conda/bin:$PATH \
     && yum install -y gcc gcc-c++ glibc-devel \
     && /opt/conda/bin/conda install --quiet --yes python=$NB_PYTHON_VER 'nomkl' \
