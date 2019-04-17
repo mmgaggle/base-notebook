@@ -29,13 +29,13 @@ RUN yum install -y curl wget java-headless bzip2 gnupg2 sqlite3 \
     && yum install -y gcc gcc-c++ glibc-devel \
     && /opt/conda/bin/conda install --quiet --yes python=$NB_PYTHON_VER 'nomkl' \
 			    ipywidgets \
-			    'matplotlib=1.5*' \
-			    'scipy=0.17*' \
-			    'seaborn=0.7*' \
-			    'cloudpickle=0.1*' \
+			    matplotlib \
+			    scipy \
+			    seaborn \
+			    cloudpickle \
 			    statsmodels \
 			    pandas \
-			    'dill=0.2*' \
+			    dill \
 			    notebook \
 			    jupyter \
     && pip install widgetsnbextension \
